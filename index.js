@@ -2,7 +2,7 @@
 const express        = require('express'),
       bodyparser     = require('body-parser'),
 		  methodOverride = require('method-override'),
-      cors           = require('cors');
+      cors           = require('cors'),
 		  app            = express();
 
 // Routes requirements
@@ -12,11 +12,6 @@ const timestamp = require('./routes/timestamp');
 app.use(cors());
 app.use(bodyparser.json({type: '*/*'}));
 app.use(methodOverride('_method'));
-
-// Server index file
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
 
 // Server routes
 app.use('/', timestamp);
