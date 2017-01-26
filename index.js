@@ -1,16 +1,16 @@
 // Server requirements
-const express        = require('express'),
-      bodyparser     = require('body-parser'),
-		  methodOverride = require('method-override'),
-      cors           = require('cors'),
-		  app            = express();
+const express = require('express'),
+  bodyparser = require('body-parser'),
+  methodOverride = require('method-override'),
+  cors = require('cors'),
+  app = express();
 
 // Routes requirements
 const timestamp = require('./routes/timestamp');
 
 // Server setup
 app.use(cors());
-app.use(bodyparser.json({type: '*/*'}));
+app.use(bodyparser.json({ type: '*/*' }));
 app.use(methodOverride('_method'));
 
 // Server routes
